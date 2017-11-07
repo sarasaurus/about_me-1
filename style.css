@@ -1,4 +1,18 @@
 body{
-  background: cyan;
+  background: black;
   color: orange;
+  font-family: sans-serif;
+}
+header{
+  text-align: center;
+}
+main{
+  border: solid;
+}
+#ansTitle{
+  border: solid;
+  margin-left: -2px;
+  margin-right: -2px;
+  text-align: center;
+  margin-top: -2px;
 }
