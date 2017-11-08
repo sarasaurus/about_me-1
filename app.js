@@ -7,15 +7,15 @@ alert('Hello! My name is Shannon and we are going to playing a little guessing g
 var name = prompt('Before you learn anything about me I\'d like to know what your name is.');
 console.log('name', name);
 
-var height = prompt('So my first question for you, '+name+', is am I 6\'2\"? (y or n)');
+var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
 var heightUpperCase = height.toUpperCase();
-console.log('6\'2\"?', heightUpperCase);
+console.log('6\'2"?', heightUpperCase);
 
 if(heightUpperCase === 'Y'){
-  alert('Yes, '+name+'! I am 6\'2\".');
+  alert('Yes, '+name+'! I am 6\'2".');
   score++;
 }else{
-  alert('You are wrong '+name+'. I am 6\'2\".');
+  alert('You are wrong '+name+'. I am 6\'2".');
 }
 
 var hockey = prompt('Okay, '+name+', my next question is am I a hockey player? (y or n)');
@@ -64,4 +64,4 @@ if(dogUppercase === 'Y'){
 
 console.log('score', score);
 
-alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 5 correct.')
+alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 5 correct.');
