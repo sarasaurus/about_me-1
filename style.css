@@ -6,8 +6,20 @@ body{
 header{
   text-align: center;
 }
-main{
+article{
   border: solid;
+  margin-right: 287px;
+  margin-bottom: -2px;
+}
+aside{
+  border: solid;
+  float: right;
+  margin-top: -142px;
+}
+footer{
+  border: solid;
+  margin-right: 287px;
+  padding-bottom: 11px;
 }
 #ansTitle{
   border: solid;
