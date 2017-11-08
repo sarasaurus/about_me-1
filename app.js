@@ -62,15 +62,10 @@ if(dogUppercase === 'Y'){
   score++;
 }
 
-alert('Give me a minute to think of a number for you to guess.');
-
-var randNum = Math.random();
-while(randNum < 1 || randNum > 10){
-  randNum = Math.random();
-}
+var randNum = Math.round(Math.random()*10);
 console.log('number to guess', randNum);
 
-for(var i = 3; i > 0; i--){
+for(var i = 3; i < 0; i--){
   var guessedNum = prompt('Guess what number I am thinking of between 1 and 10.');
   guessedNum = guessedNum.parseInt();
   console.log('guessed number', guessedNum);
