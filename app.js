@@ -51,7 +51,7 @@ if(carUpperCase === 'Y'){
   alert('You were wrong '+name+'. I do own a Hyundai');
 }
 
-var dog = prompt('For my fifth and final question I\'ll ask you, '+name+', is do I have a dog? (y or n)');
+var dog = prompt('For my fifth question I\'ll ask you, '+name+', is do I have a dog? (y or n)');
 var dogUppercase = dog.toUpperCase();
 console.log('dog?', dogUppercase);
 
@@ -62,6 +62,36 @@ if(dogUppercase === 'Y'){
   score++;
 }
 
+var randNum = Math.round(Math.random()*10);
+console.log('number to guess', randNum);
+
+var i = 4;
+var beatNum = false;
+
+while(i > 0){
+  var guessedNum = prompt('Guess what number I am thinking of between 1 and 10.');
+  guessedNum = parseInt(guessedNum);
+  console.log('guessed number', guessedNum);
+  if(guessedNum === randNum){
+    alert('Wow, you guessed it '+name+'.');
+    score++;
+    beatNum = true;
+    break;
+  } else if(guessedNum < randNum){
+    alert('Too low. '+i+' tries left.');
+  } else if(guessedNum > randNum){
+    alert('Too high. '+i+' tries left.');
+  } else {
+    console.log('your if statement broke');
+  }
+  i--;
+  //console.log('you are now below the if statment');
+}
+
+if(beatNum === false){
+  alert('You couldn\'t guess the number '+name+'.');
+}
+
 console.log('score', score);
 
-alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 5 correct.');
+alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 7 correct.');
