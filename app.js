@@ -4,7 +4,7 @@ var score = 0;
 
 alert('Hello! My name is Shannon and we are going to playing a little guessing game where you have to guess things about me.');
 
-var name = prompt('Before you learn anything about me I\'d like to know what your name is.');
+var name = prompt('Before you learn anything about me I\'d like to know what your name is.');//this stupid error causes no problems but wont go away and it upsets me
 console.log('name', name);
 
 var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
