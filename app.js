@@ -78,9 +78,9 @@ while(i > 0){
     beatNum = true;
     break;
   } else if(guessedNum < randNum){
-    alert('Too low. '+i+' tries left.');
+    alert('Too low. '+(i - 1)+' tries left.');
   } else if(guessedNum > randNum){
-    alert('Too high. '+i+' tries left.');
+    alert('Too high. '+(i - 1)+' tries left.');
   } else {
     console.log('your if statement broke');
   }
@@ -90,6 +90,42 @@ while(i > 0){
 
 if(beatNum === false){
   alert('You couldn\'t guess the number '+name+'.');
+}
+
+var states = ['california', 'florida', 'oregon', 'maine'];
+var beatStates = false;
+var j = 6;
+
+while(j >0){
+  var guessedState = prompt('Can you guess a state I\'ve lived in other than Washington').toLowerCase();
+  console.log('guessedState', guessedState);
+  if(guessedState === states[0]){
+    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[1]+', '+states[2]+'.');
+    score++;
+    beatStates = true;
+    break;
+  } else if(guessedState === states[1]){
+    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[0]+', '+states[2]+'.');
+    score++;
+    beatStates = true;
+    break;
+  }else if(guessedState === states[2]){
+    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[1]+', '+states[0]+'.');
+    score++;
+    beatStates = true;
+    break;
+  }else if(guessedState === states[3]){
+    alert('Good job, '+name+', you guessed correctly. The other states are '+states[0]+', '+states[1]+', '+states[2]+'.');
+    score++;
+    beatStates = true;
+    break;
+  }else if(guessedState !== states[0,1,2,3]){
+    alert('Wrong I never lived there. '+(j - 1)+' tries left.');
+  }
+  j--;
+}
+if(beatStates === false){
+  alert('Too bad '+name+', you got it wrong. The correct answer are '+states[0]+', '+states[1]+', '+states[3]+', '+states[2]+'.');
 }
 
 console.log('score', score);
