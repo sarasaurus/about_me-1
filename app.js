@@ -65,17 +65,31 @@ if(dogUppercase === 'Y'){
 var randNum = Math.round(Math.random()*10);
 console.log('number to guess', randNum);
 
-for(var i = 3; i < 0; i--){
+var i = 4;
+var beatNum = false;
+
+while(i > 0){
   var guessedNum = prompt('Guess what number I am thinking of between 1 and 10.');
-  guessedNum = guessedNum.parseInt();
+  guessedNum = parseInt(guessedNum);
   console.log('guessed number', guessedNum);
   if(guessedNum === randNum){
     alert('Wow, you guessed it '+name+'.');
+    score++;
+    beatNum = true;
+    break;
   } else if(guessedNum < randNum){
     alert('Too low. '+i+' tries left.');
   } else if(guessedNum > randNum){
     alert('Too high. '+i+' tries left.');
+  } else {
+    console.log('your if statement broke');
   }
+  i--;
+  //console.log('you are now below the if statment');
+}
+
+if(beatNum === false){
+  alert('You couldn\'t guess the number '+name+'.');
 }
 
 console.log('score', score);
