@@ -1,23 +1,32 @@
 'use strict';
 
 var score = 0;
+var name;
 
 alert('Hello! My name is Shannon and we are going to playing a little guessing game where you have to guess things about me.');
-
-var name = prompt('Before you learn anything about me I\'d like to know what your name is.');//this stupid error causes no problems but wont go away and it upsets me
-console.log('name', name);
-
-var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
-var heightUpperCase = height.toUpperCase();
-console.log('6\'2"?', heightUpperCase);
-
-if(heightUpperCase === 'Y'){
-  alert('Yes, '+name+'! I am 6\'2".');
-  score++;
-}else{
-  alert('You are wrong '+name+'. I am 6\'2".');
+//name
+function getName () {
+  name=prompt('Before you learn anything about me I\'d like to know what your name is.');//this stupid error causes no problems but wont go away and it upsets me
+  console.log('name', name);
 }
+getName();
 
+//q 1
+function questionOne (){
+  var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
+  var heightUpperCase = height.toUpperCase();
+  console.log('6\'2"?', heightUpperCase);
+  if(heightUpperCase === 'Y'){
+    alert('Yes, '+name+'! I am 6\'2".');
+    score++;
+    console.log('points: ', score);
+  }else{
+    alert('You are wrong '+name+'. I am 6\'2".');
+  }
+}
+questionOne();
+
+/*
 var hockey = prompt('Okay, '+name+', my next question is am I a hockey player? (y or n)');
 var hockeyUpperCase = hockey.toUpperCase();
 console.log('play hockey?', hockeyUpperCase);
@@ -61,37 +70,52 @@ if(dogUppercase === 'Y'){
   alert('Correct. Cats are way better anyways, but you know this '+name+'.');
   score++;
 }
+*/
 
-var randNum = Math.round(Math.random()*10);
-console.log('number to guess', randNum);
 
-var i = 4;
-var beatNum = false;
 
-while(i > 0){
-  var guessedNum = prompt('Guess what number I am thinking of between 1 and 10.');
-  guessedNum = parseInt(guessedNum);
-  console.log('guessed number', guessedNum);
-  if(guessedNum === randNum){
-    alert('Wow, you guessed it '+name+'.');
-    score++;
-    beatNum = true;
-    break;
-  } else if(guessedNum < randNum){
-    alert('Too low. '+(i - 1)+' tries left.');
-  } else if(guessedNum > randNum){
-    alert('Too high. '+(i - 1)+' tries left.');
-  } else {
-    console.log('your if statement broke');
+
+
+function randNumFunc () {
+  var randNum = Math.round(Math.random()*10);
+  console.log('number to guess', randNum);
+  return randNum;
+}
+var randNum=randNumFunc();
+
+//Question 6
+function numQuest () {
+  var i = 4;
+  var beatNum = false;
+
+  while(i > 0){
+    var guessedNum = prompt('Guess what number I am thinking of between 1 and 10.');
+    guessedNum = parseInt(guessedNum);
+    console.log('guessed number', guessedNum);
+    if(guessedNum === randNum){
+      alert('Wow, you guessed it '+name+'.');
+      score++;
+      beatNum = true;
+      break;
+    } else if(guessedNum < randNum){
+      alert('Too low. '+(i - 1)+' tries left.');
+    } else if(guessedNum > randNum){
+      alert('Too high. '+(i - 1)+' tries left.');
+    } else {
+      console.log('your if statement broke');
+    }
+    i--;
+    //console.log('you are now below the if statment');
   }
-  i--;
-  //console.log('you are now below the if statment');
-}
 
-if(beatNum === false){
-  alert('You couldn\'t guess the number '+name+'.');
-}
+  if(beatNum === false){
+    alert('You couldn\'t guess the number '+name+'.');
+  }
 
+}
+numQuest();
+
+//Question 7
 var states = ['california', 'florida', 'oregon', 'maine'];
 var beatStates = false;
 var j = 6;
