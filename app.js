@@ -54,7 +54,7 @@ var userTry = 4;
 //USER TRY EVALUATES AS NaN I don't get it.
 //q6 function
 function questNumFunc (questionNum, answerNum, trueNum, falseNumLow, falseNumHigh, endAlert) {
-  while (userTry > 0) {
+  while (userTry.length > 0) {
     var userNum = parseInt(prompt(questionNum));
     console.log ('user guessed:', userNum);
     if (userNum === answerNum) {
