@@ -25,67 +25,12 @@ function firstQs (question, correctAnswer, trueResponse, falseResponse) {
 }
 
 firstQs ('So my first question for you, ' + name + ', is am I 6\'2"? (y or n)', 'Y', 'Yes, ' + name + '! I am 6\'2".', 'You are wrong ' + name + '. I am 6\'2".');
+firstQs('Okay, ' + name + ', my next question is am I a hockey player? (y or n)', 'Y', 'Yes! I am a hockey player '+name+'.', 'You were wrong. I am a hockey player'+name+'.');
+firstQs('My third question is do I like birds? (y or n)', 'N', 'You were right! I hate birds, but I don\'t hate you '+name+'.', 'You are wrong. I hate birds, but I don\'t hate you ' + name + '.');
+firstQs('This question is do I own a Hyundai? (y or n)', 'Y', 'Yes, '+name+'! I do own a Hyundai', 'You were wrong '+name+'. I do own a Hyundai');
+firstQs('For my fifth question I\'ll ask you, '+name+', is do I have a dog? (y or n)', 'N', 'Correct. Cats are way better anyways, but you know this '+name+'.', 'Wrong. Cats are the far superior animal. You should know that '+name+'.');
 
-/*function questionOne (){
-  var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
-  var heightUpperCase = height.toUpperCase();
-  console.log('6\'2"?', heightUpperCase);
-  if(heightUpperCase === 'Y'){
-    alert('Yes, '+name+'! I am 6\'2".');
-    score++;
-    console.log('points: ', score);
-  }else{
-    alert('You are wrong '+name+'. I am 6\'2".');
-  }
-}
-questionOne();
-
-/*
-var hockey = prompt('Okay, '+name+', my next question is am I a hockey player? (y or n)');
-var hockeyUpperCase = hockey.toUpperCase();
-console.log('play hockey?', hockeyUpperCase);
-
-if(hockeyUpperCase === 'Y'){
-  alert('Yes! I am a hockey player '+name+'.');
-  score++;
-}else{
-  alert('You were wrong. I am a hockey player'+name+'.');
-}
-
-var bird = prompt('My third question is do I like birds? (y or n)');
-var birdUpperCase = bird.toUpperCase();
-console.log('like birds?', birdUpperCase);
-
-if(birdUpperCase === 'Y'){
-  alert('You are wrong. I hate birds, but I don\'t hate you '+name+'.');
-}else{
-  alert('You were right! I hate birds, but I don\'t hate you '+name+'.');
-  score++;
-}
-
-var car = prompt('This question is do I own a Hyundai? (y or n)');
-var carUpperCase = car.toUpperCase();
-console.log('Hyundai', carUpperCase);
-
-if(carUpperCase === 'Y'){
-  alert('Yes, '+name+'! I do own a Hyundai');
-  score++;
-}else{
-  alert('You were wrong '+name+'. I do own a Hyundai');
-}
-
-var dog = prompt('For my fifth question I\'ll ask you, '+name+', is do I have a dog? (y or n)');
-var dogUppercase = dog.toUpperCase();
-console.log('dog?', dogUppercase);
-
-if(dogUppercase === 'Y'){
-  alert('Wrong. Cats are the far superior animal. You should know that '+name+'.');
-}else{
-  alert('Correct. Cats are way better anyways, but you know this '+name+'.');
-  score++;
-}
-*/
-
+//q6
 function randNumFunc () {
   var randNum = Math.round(Math.random()*10);
   console.log('number to guess', randNum);
