@@ -12,7 +12,21 @@ function getName () {
 getName();
 
 //q 1
-function questionOne (){
+function firstQs (question, correctAnswer, trueResponse, falseResponse) {
+  var userAnswer = prompt(question).toUpperCase().charAt(0);
+  console.log('user answer: ', userAnswer);
+  if (userAnswer === correctAnswer) {
+    alert (trueResponse);
+    score++;
+    console.log('user score: ', score);
+  } else {
+    alert (falseResponse);
+  }
+}
+
+firstQs ('So my first question for you, ' + name + ', is am I 6\'2"? (y or n)', 'Y', 'Yes, ' + name + '! I am 6\'2".', 'You are wrong ' + name + '. I am 6\'2".');
+
+/*function questionOne (){
   var height = prompt('So my first question for you, '+name+', is am I 6\'2"? (y or n)');
   var heightUpperCase = height.toUpperCase();
   console.log('6\'2"?', heightUpperCase);
@@ -72,10 +86,6 @@ if(dogUppercase === 'Y'){
 }
 */
 
-
-
-
-
 function randNumFunc () {
   var randNum = Math.round(Math.random()*10);
   console.log('number to guess', randNum);
@@ -116,42 +126,25 @@ function numQuest () {
 numQuest();
 
 //Question 7
-var states = ['california', 'florida', 'oregon', 'maine'];
-var beatStates = false;
-var j = 6;
-
-while(j >0){
-  var guessedState = prompt('Can you guess a state I\'ve lived in other than Washington').toLowerCase();
-  console.log('guessedState', guessedState);
-  if(guessedState === states[0]){
-    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[1]+', '+states[2]+'.');
-    score++;
-    beatStates = true;
-    break;
-  } else if(guessedState === states[1]){
-    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[0]+', '+states[2]+'.');
-    score++;
-    beatStates = true;
-    break;
-  }else if(guessedState === states[2]){
-    alert('Good job, '+name+', you guessed correctly. The other states are '+states[3]+', '+states[1]+', '+states[0]+'.');
-    score++;
-    beatStates = true;
-    break;
-  }else if(guessedState === states[3]){
-    alert('Good job, '+name+', you guessed correctly. The other states are '+states[0]+', '+states[1]+', '+states[2]+'.');
-    score++;
-    beatStates = true;
-    break;
-  }else if(guessedState !== states[0,1,2,3]){
-    alert('Wrong I never lived there. '+(j - 1)+' tries left.');
+function statesQuest () {
+  var states = ['california', 'florida', 'oregon', 'maine'];
+  var j = 6;
+  while(j >0){
+    var guessedState = prompt('Can you guess a state I\'ve lived in other than Washington').toLowerCase();
+    console.log('guessedState', guessedState);
+    if(states.includes(guessedState)){
+      var index = states.indexOf(guessedState);
+      states.splice(index);
+      alert('Good job, '+ name +', you guessed correctly. The other states are '+ states[0] + ', '+states[1]+', '+states[2]+'.');
+      score++;
+      break;
+    }
+    else {
+      alert('Too bad '+name+', you got it wrong. The correct answer are '+states[0]+', '+states[1]+', '+states[3]+', '+states[2]+'.');
+    }
   }
-  j--;
 }
-if(beatStates === false){
-  alert('Too bad '+name+', you got it wrong. The correct answer are '+states[0]+', '+states[1]+', '+states[3]+', '+states[2]+'.');
-}
-
+statesQuest ();
 console.log('score', score);
 
-alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 7 correct.');
+alert('Congrats, '+name+'! You made it through the game. You got ' + score + ' out of 7 correct.');//
